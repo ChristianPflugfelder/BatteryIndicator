@@ -38,6 +38,7 @@ namespace BatteryIndicator
             if (LastPercentage != BatteryPercentage)
             {
                 CreateIcon(BatteryPercentage);
+                ChangeTooltip();
                 LastPercentage = BatteryPercentage;
             }
         }
@@ -46,6 +47,12 @@ namespace BatteryIndicator
         {
             try
             {
+                if (BatteryPercentage == 100)
+                {
+                    notifyIcon.Icon = Properties.Resources.battery_full;
+                    return;
+                }
+
                 //Load the Image to be written on
                 Bitmap bitMapImage = new Bitmap(50, 50);
                 Graphics graphicImage = Graphics.FromImage(bitMapImage);
@@ -59,20 +66,27 @@ namespace BatteryIndicator
                 //Clean house
                 graphicImage.Dispose();
                 bitMapImage.Dispose();
-
-                //Change Tooltip
-                int timeLeft = (int)SystemInformation.PowerStatus.BatteryLifeRemaining / 60;
-                int hrLeft = timeLeft / 60;
-                int minLeft = timeLeft % 60;
-                if (hrLeft != 0)
-                {
-                    notifyIcon.Text = $"{hrLeft} hr";
-                }
-                notifyIcon.Text += $"{minLeft} min";
             }
             catch
             {
             }
+        }
+
+        private void ChangeTooltip()
+        {
+            int timeLeft = (int)SystemInformation.PowerStatus.BatteryLifeRemaining / 60;
+            int hrLeft = timeLeft / 60;
+            int minLeft = timeLeft % 60;
+            notifyIcon.Text = "";
+            if (timeLeft == 0)
+            {
+                return;
+            }
+            if (hrLeft != 0)
+            {
+                notifyIcon.Text += $"{hrLeft} hr ";
+            }
+            notifyIcon.Text += $"{minLeft} min remaining";
         }
     }
 }

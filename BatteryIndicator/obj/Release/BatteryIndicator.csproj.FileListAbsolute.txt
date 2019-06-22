@@ -1,0 +1,10 @@
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\bin\Release\BatteryIndicator.exe.config
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\bin\Release\BatteryIndicator.exe
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\bin\Release\BatteryIndicator.pdb
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.csprojAssemblyReference.cache
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.Form1.resources
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.Properties.Resources.resources
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.csproj.GenerateResource.cache
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.csproj.CoreCompileInputs.cache
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.exe
+D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.pdb
