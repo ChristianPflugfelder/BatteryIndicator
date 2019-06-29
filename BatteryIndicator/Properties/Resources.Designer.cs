@@ -59,15 +59,5 @@ namespace BatteryIndicator.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
-        /// </summary>
-        internal static System.Drawing.Icon battery_full {
-            get {
-                object obj = ResourceManager.GetObject("battery_full", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
     }
 }

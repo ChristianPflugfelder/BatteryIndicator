@@ -19,9 +19,7 @@ namespace BatteryIndicator
         {
             InitializeComponent();
 
-            float BatteryPercentage = SystemInformation.PowerStatus.BatteryLifePercent * 100;
-            CreateIcon(BatteryPercentage);
-            LastPercentage = BatteryPercentage;
+            OnTimer(null, null);
 
             System.Timers.Timer timer = new System.Timers.Timer();
             timer.Interval = 10000; // 10 seconds
@@ -34,11 +32,11 @@ namespace BatteryIndicator
         private void OnTimer(object sender, ElapsedEventArgs e)
         {
             float BatteryPercentage = SystemInformation.PowerStatus.BatteryLifePercent * 100;
+            ChangeTooltip();
 
             if (LastPercentage != BatteryPercentage)
             {
                 CreateIcon(BatteryPercentage);
-                ChangeTooltip();
                 LastPercentage = BatteryPercentage;
             }
         }
@@ -47,19 +45,25 @@ namespace BatteryIndicator
         {
             try
             {
-                if (BatteryPercentage == 100)
-                {
-                    notifyIcon.Icon = Properties.Resources.battery_full;
-                    return;
-                }
-
                 //Load the Image to be written on
                 Bitmap bitMapImage = new Bitmap(50, 50);
                 Graphics graphicImage = Graphics.FromImage(bitMapImage);
 
-                //Write text
-                graphicImage.DrawString(BatteryPercentage.ToString(), new Font("Arial", 25), new SolidBrush(System.Drawing.Color.White), new System.Drawing.Point(-5, 3));
+                Point position;
+                Font font;
+                if (BatteryPercentage == 100)
+                {
+                    position = new System.Drawing.Point(-9, 6);
+                    font = new Font("Arial", 20);
+                }
+                else
+                {
+                    position = new System.Drawing.Point(-5, 3);
+                    font = new Font("Arial", 25);
+                }
 
+                //Write text
+                graphicImage.DrawString(BatteryPercentage.ToString(), font, new SolidBrush(System.Drawing.Color.White), position);
                 Icon icon = System.Drawing.Icon.FromHandle(bitMapImage.GetHicon());
                 notifyIcon.Icon = icon;
 
@@ -86,7 +90,7 @@ namespace BatteryIndicator
             {
                 notifyIcon.Text += $"{hrLeft} hr ";
             }
-            notifyIcon.Text += $"{minLeft} min remaining";
+            notifyIcon.Text += $"{minLeft} min remain";
         }
     }
 }
