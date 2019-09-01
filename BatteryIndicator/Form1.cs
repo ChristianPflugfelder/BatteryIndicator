@@ -53,13 +53,13 @@ namespace BatteryIndicator
                 Font font;
                 if (BatteryPercentage == 100)
                 {
-                    position = new System.Drawing.Point(-9, 6);
-                    font = new Font("Arial", 20);
+                    position = new System.Drawing.Point(-10, 6);
+                    font = new Font("Arial", 25);
                 }
                 else
                 {
-                    position = new System.Drawing.Point(-5, 3);
-                    font = new Font("Arial", 25);
+                    position = new System.Drawing.Point(-4, 3);
+                    font = new Font("Arial", 30);
                 }
 
                 //Write text

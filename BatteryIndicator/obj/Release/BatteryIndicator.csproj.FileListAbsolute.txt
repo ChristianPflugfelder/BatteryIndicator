@@ -7,4 +7,3 @@ D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\Bat
 D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.csproj.CoreCompileInputs.cache
 D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.exe
 D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.pdb
-D:\Programmieren\Visual Studio\BatteryIndicator\BatteryIndicator\obj\Release\BatteryIndicator.csprojAssemblyReference.cache
